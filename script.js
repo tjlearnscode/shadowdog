@@ -11,6 +11,48 @@ and 5230px in height with 10rows*/
 
 const SPRITE_WIDTH = 573; //sprite sheet width/12(cols)
 const SPRITE_HEIGHT = 523; //sprite sheet height/10rows
+const SPRITE_COORDINATES = {
+    "idle": {
+        "frames": 6,
+        "row": 0
+    },
+    "jump": {
+        "frames": 6,
+        "row": 1
+    },
+    "land": {
+        "frames": 6,
+        "row": 2
+    },
+    "run": {
+        "frames": 8,
+        "row": 3
+    },
+    "dizzy": {
+        "frames": 10,
+        "row": 4
+    },
+    "down": {
+        "frames": 4,
+        "row": 5
+    },
+    "roll": {
+        "frames": 6,
+        "row": 6
+    },
+    "bite": {
+        "frames": 6,
+        "row": 7
+    },
+    "faint": {
+        "frames": 11,
+        "row": 8
+    },
+    "hit": {
+        "frames": 3,
+        "row": 9
+    }
+}
 let frameX = 1;
 let frameY = 6;
 const PLAYER_W = 50;
@@ -22,9 +64,18 @@ function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
     //ctx.fillRect(100,50,100,100);
     //ctx.drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)
-    ctx.drawImage(playerImg,frameX * SPRITE_WIDTH,frameY * SPRITE_HEIGHT,SPRITE_WIDTH,SPRITE_HEIGHT,0,0,PLAYER_W,PLAYER_H);
+    let state = document.getElementById('animations').value;
+    let maxFrames = SPRITE_COORDINATES.state.frames
+
+    ctx.drawImage(playerImg,frameX * SPRITE_WIDTH,SPRITE_COORDINATES.state.row * SPRITE_HEIGHT,SPRITE_WIDTH,SPRITE_HEIGHT,0,0,PLAYER_W,PLAYER_H);
+    
     if (gameFrame % STAGGER_FRAMES == 0) {
-        switch (frameY) {
+        if (frameX / maxFrames == 1) {
+            frameX = 0;
+        } else {
+            frameX++;
+        };
+        /*switch (frameY) {
             case 0:
             case 1:
             case 2:
@@ -77,7 +128,7 @@ function animate(){
                 }
             };
                 break;
-        };
+        };*/
         };
         gameFrame++;
 
