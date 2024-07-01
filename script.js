@@ -1,7 +1,7 @@
 let playerState = 'idle';
 const DROPDOWN = document.getElementById('animations');
 DROPDOWN.addEventListener('change', function(e) => {
-playerState = e.target.text
+playerState = e.target.value
 });
 
 const canvas = document.getElementById('canvas1');
