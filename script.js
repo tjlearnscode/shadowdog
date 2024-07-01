@@ -53,7 +53,7 @@ const SPRITE_COORDINATES = {
         "row": 9
     }
 }
-let frameX = 1;
+let frameX = 0;
 let frameY = 6;
 const PLAYER_W = 50;
 const PLAYER_H = 50;
