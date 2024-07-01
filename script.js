@@ -64,7 +64,7 @@ function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
     //ctx.fillRect(100,50,100,100);
     //ctx.drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)
-    let state = document.getElementById('animations').value;
+    let state = document.getElementById('animations').options.selectedIndex.text;
     let maxFrames = SPRITE_COORDINATES.state.frames
 
     ctx.drawImage(playerImg,frameX * SPRITE_WIDTH,SPRITE_COORDINATES.state.row * SPRITE_HEIGHT,SPRITE_WIDTH,SPRITE_HEIGHT,0,0,PLAYER_W,PLAYER_H);
