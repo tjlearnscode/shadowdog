@@ -1,6 +1,6 @@
 let playerState = 'idle';
 const DROPDOWN = document.getElementById('animations');
-DROPDOWN.addEventListener('change', function(e) => {
+DROPDOWN.addEventListener('change', function(e) {
 playerState = e.target.value
 });
 
