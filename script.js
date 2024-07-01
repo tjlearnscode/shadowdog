@@ -1,3 +1,9 @@
+let playerState = 'idle';
+const DROPDOWN = document.getElementById('animations');
+DROPDOWN.addEventListener('change', function(e) => {
+playerState = e.target.text
+});
+
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
@@ -64,8 +70,7 @@ function animate(){
     ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
     //ctx.fillRect(100,50,100,100);
     //ctx.drawImage(image,sx,sy,sw,sh,dx,dy,dw,dh)
-    let state = document.getElementById('animations').options.selectedIndex.text;
-    let maxFrames = SPRITE_COORDINATES.state.frames
+    let maxFrames = SPRITE_COORDINATES.playerState.frames;
 
     ctx.drawImage(playerImg,frameX * SPRITE_WIDTH,SPRITE_COORDINATES.state.row * SPRITE_HEIGHT,SPRITE_WIDTH,SPRITE_HEIGHT,0,0,PLAYER_W,PLAYER_H);
     
