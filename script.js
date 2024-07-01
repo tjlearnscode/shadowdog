@@ -61,8 +61,8 @@ const SPRITE_COORDINATES = {
 }
 let frameX = 0;
 let frameY = 6;
-const PLAYER_W = 50;
-const PLAYER_H = 50;
+const PLAYER_W = 150;
+const PLAYER_H = 150;
 const STAGGER_FRAMES = 5;
 let gameFrame = 0;
 
